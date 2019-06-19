@@ -1,6 +1,8 @@
-## Toy Robot Simulator
+Toy Robot Simulator
+===================
 
-## Description
+Description
+-----------
 
 - The application is a simulation of a toy robot moving on a square tabletop,
   of dimensions 5 units x 5 units.
@@ -37,13 +39,15 @@ Create an application that can read in commands of the following form:
 - Input can be from a file, or from standard input, as the developer chooses.
 - Provide test data to exercise the application.
 
-## Constraints
+Constraints
+-----------
 
 - The toy robot must not fall off the table during movement. This also
   includes the initial placement of the toy robot.
 - Any move that would cause the robot to fall must be ignored.
 
-## Example Input and Output
+Example Input and Output
+------------------------
 
 ### Example a
 
@@ -78,7 +82,8 @@ Expected output
 
     3,3,NORTH
 
-## Deliverables
+Deliverables
+------------
 
 Please provide your source code, and any test code/data you using in
 developing your solution.
