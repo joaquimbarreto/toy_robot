@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import StartPosition from "./StartPosition";
 import "../App.css";
 
 const ToyRobot = () => {
   const [compass, setCompass] = useState("North");
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+  const [reset, setReset] = useState(false);
 
   const turnLeft = () => {
     switch (compass) {
@@ -56,15 +58,39 @@ const ToyRobot = () => {
     return null;
   };
 
-  const reset = () => {
+  const resetPosition = () => {
     setCompass("North");
     setY(0);
     setX(0);
+    setReset(true);
+  };
+
+  const handleSelectX = value => {
+    setX(value);
+  };
+
+  const handleSelectY = value => {
+    setY(value);
+  };
+  const handleSelectCompass = value => {
+    setCompass(value);
+  };
+
+  const resetFalse = set => {
+    setReset(set);
   };
 
   return (
-    <div className="toy-robot">
-      <p>Please click on the buttons below:</p>
+    <div>
+      <header>Toy Robot</header>
+      <StartPosition
+        x={handleSelectX}
+        y={handleSelectY}
+        compass={handleSelectCompass}
+        reset={reset}
+        resetFalse={resetFalse}
+      />
+      <p>Click on the buttons below to navigate toy robot:</p>
       <button className="button" onClick={() => turnLeft()}>
         Left
       </button>
@@ -79,7 +105,7 @@ const ToyRobot = () => {
           Report: {x}, {y}, {compass}
         </span>
       </p>
-      <button className="button" onClick={() => reset()}>
+      <button className="button" onClick={() => resetPosition()}>
         Reset
       </button>
     </div>
